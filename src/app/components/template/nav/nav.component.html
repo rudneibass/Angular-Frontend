@@ -1,0 +1,39 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons v-middle">
+                    home
+                </i> Inicio
+            </a>
+
+            <a mat-list-item routerLink="send-feedback">
+                <i class="material-icons v-middle">
+                    reply
+                </i> Enviados
+            </a>
+
+            <a mat-list-item routerLink="receive-feedback">
+                <i class="material-icons v-middle">
+                    send
+                </i> Recebidos
+            </a>
+
+            <a mat-list-item routerLink="/users">
+                <i class="material-icons v-middle">
+                    manage_accounts
+                </i> Usuarios
+            </a>
+
+            <a mat-list-item (click)="logout()">
+                <i class="material-icons v-middle">
+                    logout
+                </i> Sair
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

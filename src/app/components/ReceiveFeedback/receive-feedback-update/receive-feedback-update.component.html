@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title class="title">Feedbacks Recebidos</mat-card-title>
+    <form>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Pontos à Melhorar</mat-label>
+            <textarea matInput matInput name="points_improve" placeholder="Pontos à Malhorar" [(ngModel)]="feedback.points_improve"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Pontos à Manter</mat-label>
+            <textarea matInput name="points_keep" placeholder="Pontos à Manter" [(ngModel)]="feedback.points_keep"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Feedback Final</mat-label>
+            <textarea matInput name="final_feedback" placeholder="Feedback Final" [(ngModel)]="feedback.final_feedback"></textarea>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="cancel()" color="secondary">
+        <i class="material-icons">
+            undo
+        </i>
+        <span>Voltar</span>
+    </button>
+
+</mat-card>

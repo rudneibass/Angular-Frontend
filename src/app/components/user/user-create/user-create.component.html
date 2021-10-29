@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title class="title">Novo Usuário</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput name="name" placeholder="Nome" [(ngModel)]="user.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="email" placeholder="Email" [(ngModel)]="user.email">
+        </mat-form-field>
+        <label>Admin</label>
+        <input type="checkbox" name="admin" (change)="changeIsAdmin()" ngClick="changeIsAdmin()" value="0" [checked]="user.admin">
+    </form>
+    <button mat-raised-button (click)="cancel()">
+        <i class="material-icons">
+            cancel
+        </i>
+        <span>Cancelar</span>
+    </button>
+
+    <button mat-raised-button (click)="createUser()" color="primary">
+        <i class="material-icons">
+            save
+        </i>
+        <span>Salvar</span>
+    </button>
+</mat-card>

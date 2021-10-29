@@ -1,0 +1,12 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+p{text-align: center;}
+
+.title{
+    text-align: center;
+    margin: 20px;}
+
+    small{color: gray;}

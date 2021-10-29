@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-title class="title">Editar Feedback</mat-card-title>
+    <form>
+    
+<mat-form-field appearance="fill">
+  <mat-label>Clique aqui para selecionar um usuário</mat-label>
+  <mat-select name="user_receiver"  [(ngModel)]="feedback.user_receiver">
+    <mat-option *ngFor="let user of users" [value]="user.id" > {{ user.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Pontos à Melhorar</mat-label>
+        <textarea matInput matInput name="points_improve" placeholder="Pontos à Malhorar" [(ngModel)]="feedback.points_improve"></textarea>
+      </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Pontos à Manter</mat-label>
+        <textarea matInput name="points_keep" placeholder="Pontos à Manter" [(ngModel)]="feedback.points_keep"></textarea>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Feedback Final</mat-label>
+        <textarea matInput name="final_feedback" placeholder="Feedback Final" [(ngModel)]="feedback.final_feedback"></textarea>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="cancel()" color="secondary">
+        <i class="material-icons">
+            cancel
+        </i>
+        <span>Cancelar</span>
+    </button>
+    
+    <button mat-raised-button (click)="updateFeedback()" color="primary">
+        <i class="material-icons">
+            post_add
+        </i>
+        <span>Salvar </span>
+    </button>
+</mat-card>
+

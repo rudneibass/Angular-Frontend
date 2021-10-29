@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title class="title">Deseja realmente excluir esse registro?</mat-card-title>
+    <form *ngIf="user">
+        <mat-form-field>
+            <input matInput name="name" placeholder="Nome" [(ngModel)]="user.name" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="email" placeholder="Email" [(ngModel)]="user.email" disabled>
+        </mat-form-field>
+
+        <!--- <label>Admin</label>
+        <input type="checkbox" name="admin" (change)="changeIsAdmin()" ngClick="changeIsAdmin()" value="user.admin" [checked]="user.admin">
+       -->
+    </form>
+    <button mat-raised-button (click)="cancel()">
+        <i class="material-icons">
+            undo
+        </i>
+        <span>Cancelar</span>
+    </button>
+
+    <button mat-raised-button (click)="deleteUser()" color="warn">
+        <i class="material-icons">
+            cancel
+        </i>
+        <span>Excluir</span>
+    </button>
+</mat-card>

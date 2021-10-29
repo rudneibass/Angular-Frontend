@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title class="title">Atualização de Usuário</mat-card-title>
+    <form *ngIf="user">
+        <mat-form-field>
+            <input matInput name="name" placeholder="Nome" [(ngModel)]="user.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="email" placeholder="Email" [(ngModel)]="user.email">
+        </mat-form-field>
+        <label>Admin</label>
+        <input type="checkbox" name="admin" (change)="changeIsAdmin()" ngClick="changeIsAdmin()" value="user.admin" [checked]="user.admin">
+
+    </form>
+    <button mat-raised-button (click)="cancel()">
+        <i class="material-icons">
+            cancel
+        </i>
+        <span>Cancelar</span>
+    </button>
+
+    <button mat-raised-button (click)="updateUser()" color="primary">
+        <i class="material-icons">
+            save
+        </i>
+        <span>Salvar</span>
+    </button>
+</mat-card>
